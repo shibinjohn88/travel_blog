@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    position: fixed;
+    width: 96%;
+    height: 50px;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: rgb(1, 108, 209);
+    top: 0;
+    }
+    
+  
+    .navbar h3 {
+    color: rgb(255, 255, 255);
+    margin: 0 20px;
+    font-size: 18px;
+    text-align: center;
+   }
+
+    
+
+ 
+
+
+    
