@@ -1,6 +1,6 @@
 import React from 'react';
 import './home.css'
-import banner from '../../images/Travelog.jpg';
+import banner from '../../images/travelogobanner.mp4';
 import { Button, Card } from 'react-bootstrap';
 import island from '../../images/island.jpeg';
 
@@ -9,8 +9,11 @@ import island from '../../images/island.jpeg';
 
 function Home() {
   return(
-    <div>
-   <img className= "travel_banner" src={banner} alt="Travelog Banner" />;
+    <div className='home_body'>
+   <video autoPlay loop className='travel_banner'>
+  <source src={banner} type='video/mp4' />
+</video>
+
 
    <h1>Welcome to Travelog</h1>
 
