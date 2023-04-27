@@ -2,18 +2,24 @@
 
 .travel_banner{
     width: 100%;
-    margin-top: 10%;
-    height:50vh;
+    height: calc(60vw / 2);
+    object-fit: cover;
 }
 
 .travel_cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem;
     width: 100%;
-    
-  }
+    justify-content:center;
+    margin: auto ;
+   }
+   
+    .top_cards{
+      margin-top: -150px
+
+    }
   
   .card img {
     height: 200px;
@@ -22,13 +28,37 @@
   }
 
   .home_body{
-    background: linear-gradient(to bottom, #EE6123,#FEEFE5,#00916e);
+    background: linear-gradient(to bottom, #ff4d00,#ffdbc4,#00916e);
     background-repeat:no-repeat;
     background-size: cover;
-  
+    overflow-y: scroll;
+    margin-top: 90px;
   }
   
   .card{
-    border: solid 1px rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color:#feefe57c;
+    box-shadow: 2px 2px 10px #ff4d0062;
+    flex: 1 0 200px;
+  }
+
+  .card img{
     border-radius: 5px;
   }
+  .card:hover {
+    transform: scale(1.0);
+    box-shadow: 1px 1px 5px black;
+  }
+
+  .card_button {
+    background-color:#EE6123;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+.travel_blog_header{
+  margin-top:-120px;
+  z-index: -1;
+}
