@@ -2,8 +2,8 @@
 
 .travel_banner{
     width: 100%;
-    margin-top: 10%;
-    height:50vh;
+    height:50%;
+    object-fit: cover;
 }
 
 .travel_cards {
@@ -12,8 +12,12 @@
     gap: 1rem;
     margin: 1rem;
     width: 100%;
-    
-  }
+   }
+   
+    .top_cards{
+      margin-top: -90px
+
+    }
   
   .card img {
     height: 200px;
@@ -22,7 +26,7 @@
   }
 
   .home_body{
-    background: linear-gradient(to bottom, #EE6123,#FEEFE5,#00916e);
+    background: linear-gradient(to bottom, #ff4d00,#ffdbc4,#00916e);
     background-repeat:no-repeat;
     background-size: cover;
   
@@ -31,4 +35,22 @@
   .card{
     border: solid 1px rgb(0, 0, 0);
     border-radius: 5px;
+    background-color:#FEEFE5;
   }
+  .card:hover {
+    transform: scale(1.0);
+    box-shadow: 1px 1px 5px black;
+  }
+
+  .card_button {
+    background-color:#EE6123;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+.travel_blog_header{
+  margin-top:-120px;
+  z-index: -1;
+}

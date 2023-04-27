@@ -1,0 +1,43 @@
+.footer_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top:-15px;
+    background-image:url("../../images/sunset.jpeg");
+    background-repeat: no-repeat;
+    background-size:100% 150%;
+}
+  
+  .footer_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .footer__github {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+   
+  }
+
+  .footer h3{
+    color:white;
+  }
+  
+  .footer__github a {
+    background: white;
+    color: #00916E;
+    padding: 0.8rem;
+    border-radius: 0.7rem;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 5px #EE6123;
+  
+  }
+  
+  .footer__github a:hover {
+    background: #ffffff;
+    color: #ee6123;
+    box-shadow: 2px 2px 5px #000000;
+  }
+

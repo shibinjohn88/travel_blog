@@ -5,7 +5,7 @@ function Login() {
   return (
     <div className="login-form-container">
       <form>
-        <h2>Login Form</h2>
+        <h2>Login</h2>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input

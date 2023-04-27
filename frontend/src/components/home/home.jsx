@@ -3,6 +3,8 @@ import './home.css'
 import banner from '../../images/travelogobanner.mp4';
 import { Button, Card } from 'react-bootstrap';
 import island from '../../images/island.jpeg';
+import travel_blog from '../../images/Travel_Blog.png';
+import Footer from '../footer/footer';
 
 
 
@@ -14,14 +16,16 @@ function Home() {
   <source src={banner} type='video/mp4' />
 </video>
 
-
-   <h1>Welcome to Travelog</h1>
-
+<img  src={travel_blog} alt="travel_blog" className="travel_blog_header"/>
+ <div className='top_cards'>
+<h1>Top Places to Visit</h1>
    <div className='travel_cards'>
+   
    <Card className='card'>
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
@@ -33,6 +37,7 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
@@ -44,10 +49,11 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
-        <Button className='cardButton'>Blog</Button>
+        <Button className='card_button'>Blog</Button>
       </Card.Body>
     </Card>
 
@@ -55,10 +61,11 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
-        <Button className='cardButton'>Blog</Button>
+        <Button className='card_button'>Blog</Button>
       </Card.Body>
     </Card>
 
@@ -66,10 +73,11 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
-        <Button className='cardButton'>Blog</Button>
+        <Button className='card_button'>Blog</Button>
       </Card.Body>
     </Card>
 
@@ -77,10 +85,11 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
-        <Button className='cardButton'>Blog</Button>
+        <Button className='card_button'>Blog</Button>
       </Card.Body>
     </Card>
 
@@ -88,10 +97,11 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
-        <Button className='cardButton'>Blog</Button>
+        <Button className='card_button'>Blog</Button>
       </Card.Body>
     </Card>
 
@@ -99,10 +109,11 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
-        <Button className='cardButton'>Blog</Button>
+        <Button className='card_button'>Blog</Button>
       </Card.Body>
     </Card>
 
@@ -110,10 +121,11 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
-        <Button className='cardButton'>Blog</Button>
+        <Button className='card_button'>Blog</Button>
       </Card.Body>
     </Card>
 
@@ -121,10 +133,11 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
-        <Button className='cardButton'>Blog</Button>
+        <Button className='card_button'>Blog</Button>
       </Card.Body>
     </Card>
 
@@ -132,10 +145,11 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
-        <Button className='cardButton'>Blog</Button>
+        <Button className='card_button'>Blog</Button>
       </Card.Body>
     </Card>
 
@@ -143,15 +157,19 @@ function Home() {
       <Card.Img variant="top" src={island} />
       <Card.Body>
         <Card.Title>My Card</Card.Title>
+        <Card.Title>Place</Card.Title>
         <Card.Text>
           your favorite island
         </Card.Text>
-        <Button className='cardButton'>Blog</Button>
+        <Button className='card_button'>Blog</Button>
       </Card.Body>
     </Card>
+    </div>
 
    </div>
+   <Footer />
   </div>
+ 
   );
 }
 
