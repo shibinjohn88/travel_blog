@@ -5,7 +5,17 @@ const bcrypt = require('bcrypt')
 
 //receive sign in details
 authentication.post('/', async (req, res) => {
-    console.log('request received for authentication')
+    let user = await User.findOne({
+        email: req.body.email
+    })
+
+    if (!user || !await bcrypt.compare(req.body.password, user.passwordDigest)) {
+        res.status(404).json({ 
+            error: `incorrect username or password` 
+        })
+    } else {
+        res.json({ user })
+    }
 })
 
 module.exports = authentication

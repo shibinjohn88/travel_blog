@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./login.css";
+import {CurrentUser} from "../../contexts/CurrentUser"
 
 function Login() {
 
+  const { setCurrentUser } = useContext(CurrentUser)
   const [credentials, setCredentials ] = useState({
     email: '',
     password: ''
   })  
+  const [error, setError] = useState(null)
 
   async function sendForm(e) {
     e.preventDefault()
@@ -20,14 +23,21 @@ function Login() {
 
     const data = await response.json()
 
-    console.log(data)
+    if (response.status === 200) {
+      setCurrentUser(data.user)
+    }
+    else {
+      setError(data.error)
+    }
   }
-
 
   return (
     <div className="login-form-container">
       <form onSubmit={sendForm}>
-        <h2>Login Form</h2>
+        <h2>Sign In</h2>
+        {
+          error ? (<h4>{error}</h4>) : null
+        }
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
