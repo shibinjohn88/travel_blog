@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './nav.css';
 import logo from '../../images/logo.png';
-
+import { CurrentUser } from '../../contexts/CurrentUser';
 
 
 
 function Navbar () {
+    
+    const { currentUser } = useContext(CurrentUser)
+    let signedUser = (
+        <h3>No login</h3>
+    )
+    if (currentUser) {
+        signedUser = (
+            <h3>{currentUser.username}</h3>
+        )
+    }
     return (
       
         <div className='navbar'>
@@ -16,6 +26,7 @@ function Navbar () {
       <h3><a href='./blog' >Blog</a></h3>
       <h3><a href='./about'>About</a></h3>
       <h3><a href='./login'>Log In</a></h3>
+      {signedUser}
         </div>
     )
 }

@@ -3,20 +3,28 @@ const app = express()
 require('dotenv').config()
 const port = process.env.PORT
 const blogController = require('./controllers/blogs.js')
+const userController = require('./controllers/users.js')
+const authenticationController = require('./controllers/authentication.js')
 const mongoose = require('mongoose')
 const bodyParser =require('body-parser')
+const cors = require('cors')
 
 
 //Middleware
 //app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+//enable all CORS request
+app.use(cors())
+
 
 app.get('/api', (req, res) => {
   res.send('API for Travel Blog web application')
 })
 
-//Redirecting all requests for blog to blog controller
+//redirecting to controllers
 app.use ('/api/blogs', blogController)
+app.use ('/api/users', userController)
+app.use ('/api/auth', authenticationController)
 
 
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
