@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
+import logo from '../../images/logo.png';
 
 function Login() {
   return (
@@ -23,6 +24,7 @@ function Login() {
           />
         </div>
         <button type="submit">Login</button>
+        <img  src={logo} alt="Logo" className="logo"/>
       </form>
     </div>
   );

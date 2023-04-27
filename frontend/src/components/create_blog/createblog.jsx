@@ -1,7 +1,8 @@
 import './createblog.css'
 import {useState} from "react"
-import { CountryDropdown, RegionDropdown, CountryRegionData } from "react-country-region-selector";
-
+import { CountryDropdown} from "react-country-region-selector";
+import bloggy from '../../images/bloggy.gif';
+import logo from '../../images/logo.png';
 
 function CreateBlog () {
     const [title, setTitle] = useState('')
@@ -11,24 +12,22 @@ function CreateBlog () {
     const [place, setPlace] = useState('')
     const [article, setArticle] = useState('');
     const [author, setAuthor] = useState('');
-    const [region, setRegion] = useState("");
+
 
     function newBlog () {
         console.log('post a form')
     }
 
-    const handleCountryChange = (val) => {
+    const CountryChange = (val) => {
         setCountry(val);
       };
-    
-      const handleRegionChange = (val) => {
-        setRegion(val);
-      };
+   
 
     return (
         <div className="form-new-blog">
             
             <form onSubmit={newBlog} >
+            <img  src={bloggy} alt="bloggy character" className="bloggy"/>
             <h1> Create a Blog </h1> 
 
        <div>
@@ -69,22 +68,12 @@ function CreateBlog () {
       <CountryDropdown
         id="country"
         value={country}
-        onChange={handleCountryChange}
+        onChange={CountryChange}
         placeholder="Select a country"
       />
       </div>
 
-      <div>
-      <label htmlFor="region">Region:</label>
-      <RegionDropdown
-        id="region"
-        country={country}
-        value={region}
-        onChange={handleRegionChange}
-        blankOptionLabel="Select a region"
-        disabled={!country}
-      />
-    </div>
+
 
       <div>
         <label htmlFor="article">Article:</label>
@@ -105,6 +94,7 @@ function CreateBlog () {
       <button type="submit">Submit</button>
 
             </form>
+            <img  src={logo} alt="Logo" className="logo"/>
         </div>
         
     )

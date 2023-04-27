@@ -8,15 +8,17 @@ function SearchBar() {
   return (
     <div className='destination_container'>
     <img  src={searchBanner} alt="travel_blog" className="travel_blogger"/>
-    <div className="search-container">
     <img src={plane} className="plane" alt="plane flying" />
+    <div className="search_container">
+    
 
-        <Form className='search_bar'>
+    <Form className='search_bar'>
         <FormControl type="text" placeholder="Search" />
             <Button>Search</Button>
-          </Form>
+          </Form> 
     
     </div>
+  
     </div>
   );
 }

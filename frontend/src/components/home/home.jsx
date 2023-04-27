@@ -26,8 +26,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -38,8 +39,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -50,8 +52,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -62,8 +65,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -74,8 +78,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -86,8 +91,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -98,8 +104,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -110,8 +117,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -122,8 +130,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -134,8 +143,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -146,8 +156,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
@@ -158,8 +169,9 @@ function Home() {
       <Card.Body>
         <Card.Title>My Card</Card.Title>
         <Card.Title>Place</Card.Title>
+        <Card.Title>Country</Card.Title>
         <Card.Text>
-          your favorite island
+          Highlights
         </Card.Text>
         <Button className='card_button'>Blog</Button>
       </Card.Body>
