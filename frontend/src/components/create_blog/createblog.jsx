@@ -13,9 +13,46 @@ function CreateBlog () {
     const [article, setArticle] = useState('');
     const [author, setAuthor] = useState('');
 
+    
 
-    function newBlog () {
-        console.log('post a form')
+
+    async function newBlog (e) {
+
+      console.log(image[0])
+      e.preventDefault()
+
+      // const blogContent = {
+      //   "blog_title": title,
+      //   "blog_poster": image[0],
+      //   "blog_description": description,
+      //   "blog_place": place,
+      //   "blog_article": article,
+      //   "blog_author": author,
+      //   "blog_country": country
+      // }
+
+      const blogContent = new FormData()
+      blogContent.set("blog_title", title)
+      blogContent.set("file", image[0])
+      blogContent.set("blog_description", description)
+      blogContent.set("blog_place", place)
+      blogContent.set("blog_article", article)
+      blogContent.set("blog_author", author)
+      blogContent.set("blog_country", country)
+
+      const response = await fetch(`http://localhost:3001/api/blogs/`, {
+          method: 'POST',
+          body: blogContent
+      })
+
+      const data = await response.json()
+
+      if (response.status === 200) {
+        console.log(data)
+      }
+      else {
+        console.log(`error ${data}`)
+      }
     }
 
     const CountryChange = (val) => {
@@ -42,8 +79,7 @@ function CreateBlog () {
         <label htmlFor="image">Image URL:</label>
         <input type="file" 
         id="image" 
-        value={image}
-        onChange={(e) => setImage(e.target.value)} />
+        onChange={(e) => setImage(e.target.files)} />
       </div>
 
       <div>
@@ -93,7 +129,7 @@ function CreateBlog () {
       </div>
       <button type="submit">Submit</button>
 
-            </form>
+        </form>
             <img  src={logo} alt="Logo" className="logo"/>
         </div>
         

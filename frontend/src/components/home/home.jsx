@@ -5,7 +5,7 @@ import { Button, Card } from 'react-bootstrap';
 import island from '../../images/island.jpeg';
 import travel_blog from '../../images/Travel_Blog.png';
 import Footer from '../footer/footer';
-
+const imageURL = 'http://localhost:3001/posters'
 
 
 

@@ -15,7 +15,8 @@ const cors = require('cors')
 app.use(bodyParser.json())
 //enable all CORS request
 app.use(cors())
-
+//make posters folder static in express
+app.use('/posters', express.static(__dirname + '/posters'))
 
 app.get('/api', (req, res) => {
   res.send('API for Travel Blog web application')
