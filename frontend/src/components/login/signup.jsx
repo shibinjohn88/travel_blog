@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
-import "./login.css";
+import "./signup.css";
 import {CurrentUser} from "../../contexts/CurrentUser"
 
-function Login() {
+function Signup() {
 
   const { setCurrentUser } = useContext(CurrentUser)
   const [credentials, setCredentials ] = useState({
@@ -32,13 +32,24 @@ function Login() {
   }
 
   return (
-    <div className="login-form-container">
+    <div className="signup-form-container">
       <form onSubmit={sendForm}>
-        <h2>Sign In</h2>
+        <h2>Create an Account</h2>
         {
           error ? (<h4>{error}</h4>) : null
         }
         <div className="form-group">
+            <div>
+        <label htmlFor="email">Username:</label>
+          <input
+            type="username"
+            required
+            id="username"
+            placeholder="Enter your username"
+            value={credentials.username}
+            onChange={e => setCredentials({ ...credentials, username: e.target.value })}   
+          />
+        </div>
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -59,14 +70,24 @@ function Login() {
             value={credentials.password}
             onChange={e => setCredentials({ ...credentials, password: e.target.value })}
           />
+
+<label htmlFor="password">Confirm Password:</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+            value={credentials.password}
+            onChange={e => setCredentials({ ...credentials, password: e.target.value })}
+          />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">create Account</button>
         <br />
         <h6>Dont have an account?</h6>
-    <a href="./signup">Sign Up</a>
+    <a href="">Sign Up</a>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Signup;
