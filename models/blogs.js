@@ -8,7 +8,7 @@ const blogSchema = new mongoose.Schema({
     blog_place: {type: String},
     blog_country: {type: String},
     blog_article: {type: String},
-    blog_author: {type: String},
+    blog_author: {type: mongoose.Schema.Types.ObjectId, ref:'User'},
     }, {
         timestamps: true
     })
