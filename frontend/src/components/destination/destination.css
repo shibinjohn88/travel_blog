@@ -1,0 +1,45 @@
+
+ 
+ .destination_container{
+background-image: url("../../images/search_background.jpeg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+ 
+ .travel_blogger{
+    width:100%;
+    height: calc(50vw / 2);
+  }
+
+  .search_bar{
+    width: 100%;
+    top: 0;
+  }
+  .search_container {
+    display: flex;
+    align-items: flex-start;
+    max-width: 80vw;
+    height: 100vh;
+    margin: 0 auto
+  }
+  
+  
+
+  .plane {
+    position: sticky;
+    top: 10px;
+    right: -100px;
+    animation: plane 15s linear infinite;
+    height: 100px;
+  }
+
+  @keyframes plane {
+    0% {
+      right: -100px;
+      left: 100%;
+    }
+    100% {
+      right: 100%;
+      left: -100px;
+    }
+  }
