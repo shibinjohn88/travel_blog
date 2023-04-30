@@ -21,6 +21,20 @@ blogs.get('/', (req, res) => {
         })
 })
 
+//read specific blog based on id
+blogs.get('/:id', async (req, res) => {
+    try {
+        const result = await Blog.findById(req.params.id).populate('blog_author')
+        // console.log(author)
+        res.status(200).json(result)
+    }
+    catch (error) {
+        console.log("there is an error")
+        res.json(error)
+    }
+    
+})
+
 //write blog to database
 blogs.post('/', posters.single('file'), (req, res) => {
     
@@ -35,14 +49,6 @@ blogs.post('/', posters.single('file'), (req, res) => {
     const [authenticationMethod, token] = req.headers.authorization.split(' ')
 
         if (authenticationMethod === 'Bearer') {
-            //decode JWT
-            // const result = await jwt.decode(process.env.JWT_SECRET, token)
-            // const {id} = result.value
-
-            // let user = await User.findOne({
-            //     _id: id
-            // })
-            // res.json(user)
             const result = jwt.decode(process.env.JWT_SECRET, token)
             const {id} = result.value
 
@@ -54,10 +60,6 @@ blogs.post('/', posters.single('file'), (req, res) => {
                     res.json(error)
                 })
         }
-
-    
-
-
 })
 
 module.exports = blogs

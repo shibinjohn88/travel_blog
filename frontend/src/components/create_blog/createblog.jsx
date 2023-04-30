@@ -28,7 +28,7 @@ function CreateBlog () {
       blogContent.set("blog_article", article)
       blogContent.set("blog_country", country)
 
-      const response = await fetch(`http://localhost:3001/api/blogs/`, {
+      const response = await fetch(`/api/blogs/`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
