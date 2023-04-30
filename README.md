@@ -9,7 +9,7 @@ https://wallpapercave.com/paradise-wallpaper
 http://wallpaperswide.com/travel_the_world_3-wallpapers.html
 https://giphy.com/stickers/Reiseuhu-travel-reiseuhu-urlaubsuhu-xg0NXrfS4AAhEV8Lhn
 
-<<<<<<< HEAD
+
 References:
 https://www.w3schools.com/howto/howto_css_searchbar.asp
 
@@ -19,4 +19,5 @@ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/F
 
 https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
 
+https://stackoverflow.com/questions/52134686/how-to-display-user-info-after-clicked-submit-in-react-js
 
