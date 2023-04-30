@@ -11,7 +11,6 @@ function CreateBlog () {
     const [country, setCountry] = useState('')
     const [place, setPlace] = useState('')
     const [article, setArticle] = useState('');
-    const [author, setAuthor] = useState('');
 
     
 
@@ -21,27 +20,19 @@ function CreateBlog () {
       console.log(image[0])
       e.preventDefault()
 
-      // const blogContent = {
-      //   "blog_title": title,
-      //   "blog_poster": image[0],
-      //   "blog_description": description,
-      //   "blog_place": place,
-      //   "blog_article": article,
-      //   "blog_author": author,
-      //   "blog_country": country
-      // }
-
       const blogContent = new FormData()
       blogContent.set("blog_title", title)
       blogContent.set("file", image[0])
       blogContent.set("blog_description", description)
       blogContent.set("blog_place", place)
       blogContent.set("blog_article", article)
-      blogContent.set("blog_author", author)
       blogContent.set("blog_country", country)
 
       const response = await fetch(`http://localhost:3001/api/blogs/`, {
           method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
           body: blogContent
       })
 
@@ -119,14 +110,6 @@ function CreateBlog () {
           onChange={(e) => setArticle(e.target.value)} />
       </div>
 
-      <div>
-        <label htmlFor="author">Author:</label>
-        <input type="text"
-         id="author"
-          value={author}
-           placeholder={'Name of Adventurer'} 
-           onChange={(e) => setAuthor(e.target.value)} />
-      </div>
       <button type="submit">Submit</button>
 
         </form>

@@ -10,16 +10,18 @@ const imageURL = 'http://localhost:3001/posters'
 
 
 function Home() {
-  const [posts, setPosts] = useState([]);
+  const [blogs, setBlogs] = useState([]);
 
 
   useEffect(() => {
-    fetch(imageURL)
-      .then(response => response.json())
-      .then(data => setPosts(data))
-      .catch(error => console.log(error));
-  }, []);
+    const fetchData = async () => {
+      const response = await fetch('/api/blog');
+      const data = await response.json();
+      setBlogs(data);
+    };
 
+    fetchData();
+  }, []);
   
 
   return(
@@ -33,18 +35,17 @@ function Home() {
 <h1>Top Places to Visit</h1>
    <div className='travel_cards'>
    
- {posts.map(post => (
-
-    <Card className='card' key={post.id}>
-     <Card.Img variant="top" src={post.image} />
-    <Card.Body>
-    <Card.Title>{post.title}</Card.Title>
-    <Card.Title>{post.place}</Card.Title>
-  <Card.Title>{post.country}</Card.Title>
-     <Card.Text>{post.highlights}</Card.Text>
-    <Button className='card_button'>Blog</Button>
-    </Card.Body>
-    </Card>
+   {blogs.map((blog) => (
+          <Card className='card' key={blog.id}>
+            <Card.Img variant="top" src={blog.blog_poster} />
+            <Card.Body>
+              <Card.Title>{blog.blog_title}</Card.Title>
+              <Card.Title>{blog.blog_place}</Card.Title>
+              <Card.Title>{blog.blog_country}</Card.Title>
+              <Card.Text>{blog.blog_highlights}</Card.Text>
+              <Button className='card_button'>Blog</Button>
+            </Card.Body>
+          </Card>
 
   ))}
     </div>
