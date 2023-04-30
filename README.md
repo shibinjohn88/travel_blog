@@ -16,6 +16,7 @@ https://getbootstrap.com/docs/4.3/components/forms/
 
 https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data
 
+https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
 
 
 
