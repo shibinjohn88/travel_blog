@@ -1,7 +1,7 @@
 .login-form-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-image: url(../../images/login_background.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,7 +14,13 @@
     align-items: center;
     padding: 2rem;
     border-radius: 5px;
-    
+    width: 500px;
+    background-color:#FEEFE5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 95%;
+    margin-top: 25px;
   }
   
   h2 {
@@ -30,3 +36,15 @@
   }
   
 
+
+  @media screen and (max-width: 768px) {
+    .login-form-container  {
+      height: auto;
+    }
+    
+    form {
+      width: 65%;
+      margin-top: 30%;
+    }
+  }
+  

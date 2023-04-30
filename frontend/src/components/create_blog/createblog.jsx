@@ -63,7 +63,7 @@ function CreateBlog () {
     return (
         <div className="form-new-blog">
             
-            <form onSubmit={newBlog} >
+            <form className="blog_form" onSubmit={newBlog} >
             <img  src={bloggy} alt="bloggy character" className="bloggy"/>
             <h1> Create a Blog </h1> 
 

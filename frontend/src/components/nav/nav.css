@@ -22,7 +22,7 @@
    }
 
   h3 a:hover {
-    color: #ee6123;
+    color: #2371ee;
    }
 
    .logo {
@@ -30,8 +30,30 @@
     height: 9vh;
     position: relative;
    }
+   
 
- 
+   @media only screen and (max-width: 1000px) {
+    .navbar {
+      flex-direction: column;
+      position: relative;
+      height: auto;
+
+    }
+    
+    .navbar h3 {
+      margin: 8px 0;
+    }
+    
+    .navbar h3 a {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 2px solid rgba(0,0,0,0.2);
+    }
+    
+    
+  }
+  
 
 
     

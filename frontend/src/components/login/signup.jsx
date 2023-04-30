@@ -50,6 +50,8 @@ function Signup() {
             onChange={e => setCredentials({ ...credentials, username: e.target.value })}   
           />
         </div>
+        <br />
+        <div>
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -59,8 +61,9 @@ function Signup() {
             value={credentials.email}
             onChange={e => setCredentials({ ...credentials, email: e.target.value })}   
           />
-        </div>
-        <div className="form-group">
+       </div>
+       <br />
+       <div>
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -70,7 +73,9 @@ function Signup() {
             value={credentials.password}
             onChange={e => setCredentials({ ...credentials, password: e.target.value })}
           />
-
+          </div>
+          <br />
+          <div>
 <label htmlFor="password">Confirm Password:</label>
           <input
             type="password"
@@ -81,10 +86,13 @@ function Signup() {
             onChange={e => setCredentials({ ...credentials, password: e.target.value })}
           />
         </div>
-        <button type="submit">create Account</button>
         <br />
-        <h6>Dont have an account?</h6>
-    <a href="">Sign Up</a>
+        <button type="submit">Create Account</button>
+        </div>
+        <br />
+        <hr />
+        <h6>Already have an account?</h6>
+    <a href="./login">Sign in</a>
       </form>
     </div>
   );
