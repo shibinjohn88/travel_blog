@@ -4,7 +4,6 @@ import banner from '../../images/travelogobanner.mp4';
 import { Button, Card } from 'react-bootstrap';
 import travel_blog from '../../images/Travel_Blog.png';
 import Footer from '../footer/footer';
-const imageURL = 'http://localhost:3001/posters'
 
 
 
@@ -12,16 +11,19 @@ const imageURL = 'http://localhost:3001/posters'
 function Home() {
   const [blogs, setBlogs] = useState([]);
 
-
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('/api/blog');
-      const data = await response.json();
-      setBlogs(data);
+      try {
+        const response = await fetch(`/api/blogs/`);
+        const data = await response.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     };
-
     fetchData();
   }, []);
+  
   
 
   return(
@@ -35,14 +37,14 @@ function Home() {
 <h1>Top Places to Visit</h1>
    <div className='travel_cards'>
    
-   {blogs.map((blog) => (
-          <Card className='card' key={blog.id}>
-            <Card.Img variant="top" src={blog.blog_poster} />
+   {blogs.map((Blog) => (
+          <Card className='card' key={Blog.id}>
+            <Card.Img variant="top" src={Blog.blog_poster} />
             <Card.Body>
-              <Card.Title>{blog.blog_title}</Card.Title>
-              <Card.Title>{blog.blog_place}</Card.Title>
-              <Card.Title>{blog.blog_country}</Card.Title>
-              <Card.Text>{blog.blog_highlights}</Card.Text>
+              <Card.Title>{Blog.blog_title}</Card.Title>
+              <Card.Title>{Blog.blog_place}</Card.Title>
+              <Card.Title>{Blog.blog_country}</Card.Title>
+              <Card.Text>{Blog.blog_highlights}</Card.Text>
               <Button className='card_button'>Blog</Button>
             </Card.Body>
           </Card>
@@ -52,7 +54,7 @@ function Home() {
 
    </div>
    <Footer />
-  </div>
+  </div> 
  
   );
 }
