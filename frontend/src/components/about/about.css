@@ -5,7 +5,15 @@
     text-align: center;
     max-width: 300px;
     margin: 0 auto;
-    margin-top: 5%;
+   top: 15%;
+    background-color: aliceblue;
+ 
+  }
+  .about{
+    background-image: url(../../images/beach.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
   }
   
   .about-me-card img {

@@ -24,6 +24,7 @@
   .card img {
     height: 200px;
     object-fit: cover;
+    border-radius: 5px;
     
   }
 
@@ -32,19 +33,18 @@
     background-repeat:no-repeat;
     background-size: cover;
     overflow-y: scroll;
-    margin-top: 90px;
+    margin-top: auto;
   }
   
   .card{
     border-radius: 5px;
     background-color:#feefe57c;
-    box-shadow: 2px 2px 10px #ff4d0062;
+    box-shadow: 2px 2px 8px #000000;
     flex: 1 0 200px;
+    max-width: 350px;
   }
 
-  .card img{
-    border-radius: 5px;
-  }
+ 
   .card:hover {
     transform: scale(1.0);
     box-shadow: 1px 1px 5px black;

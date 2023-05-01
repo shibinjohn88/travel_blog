@@ -5,6 +5,7 @@ import shibin from '../../images/island.jpeg';
 
 function HelloWorld() {
   return (
+    <div className="about">
     <div class="about-me-card">
       <img src={hansel} alt="Profile Picture" />
       <h2>Hansel Quiroz</h2>
@@ -26,6 +27,7 @@ function HelloWorld() {
         <li>Tokyo, Japan</li>
         <li>New York City, USA</li>
       </ul>
+    </div>
     </div>
   );
 }

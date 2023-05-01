@@ -1,0 +1,68 @@
+.blog_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem;
+    width: 100%;
+    justify-content:center;
+    margin: auto ;
+    margin-top: 100px;
+    align-items: center;
+   }
+
+   .blog_body {
+    background-image: url(../../images/clouds.jpeg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+    margin-top: auto;
+    height: 100vh;
+  }
+
+  .blog_body h1{
+    margin-top: 100px;
+  
+  }
+
+  .blog_link{
+    color: rgb(0, 0, 0);
+    background-color:#62aeffc9;
+    border-radius: 10px;
+    margin: 0 20px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration:none;
+    text-shadow: 1px 2px 5px #00916e;
+    font-family: 'Indie Flower', cursive;
+    box-shadow:2px 2px 5px #EE6123;
+   }
+
+ .blog_link:hover {
+    color: #ffffff;
+    background-color:#EE6123;
+    box-shadow:2px 2px 5px #0e7a0e;
+    font-size: 30px;
+   }
+
+    
+ .blog_card{
+    border-radius: 5px;
+    background-color:#feefe57c;
+    box-shadow: 2px 2px 8px #000000;
+    flex: 1 0 200px;
+    max-width: 350px;
+  }
+
+ 
+ .blog_card:hover {
+    transform: scale(1.0);
+    box-shadow: 1px 1px 5px black;
+  }
+
+ .blog_card_button {
+    background-color:#EE6123;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
