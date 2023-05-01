@@ -11,25 +11,21 @@ function CreateBlog () {
     const [country, setCountry] = useState('')
     const [place, setPlace] = useState('')
     const [article, setArticle] = useState('');
-    const [author, setAuthor] = useState('');
+    const [showMessage, setShowMessage] = useState(false);
+    const [imageURL, setImageURL] = useState('');
+
+
 
     
 
 
     async function newBlog (e) {
+      e.preventDefault()
+      setShowMessage(true);
+
 
       console.log(image[0])
       e.preventDefault()
-
-      // const blogContent = {
-      //   "blog_title": title,
-      //   "blog_poster": image[0],
-      //   "blog_description": description,
-      //   "blog_place": place,
-      //   "blog_article": article,
-      //   "blog_author": author,
-      //   "blog_country": country
-      // }
 
       const blogContent = new FormData()
       blogContent.set("blog_title", title)
@@ -37,48 +33,76 @@ function CreateBlog () {
       blogContent.set("blog_description", description)
       blogContent.set("blog_place", place)
       blogContent.set("blog_article", article)
-      blogContent.set("blog_author", author)
       blogContent.set("blog_country", country)
 
-      const response = await fetch(`http://localhost:3001/api/blogs/`, {
+      const response = await fetch(`/api/blogs/`, {
           method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
           body: blogContent
       })
 
       const data = await response.json()
 
       if (response.status === 200) {
-        console.log(data)
+        console.log(data);
+        setImageURL(data.blog_image_url);
       }
       else {
         console.log(`error ${data}`)
       }
     }
 
+
     const CountryChange = (val) => {
-        setCountry(val);
-      };
-   
+      setCountry(val);
+
+  };
+
+  const handleTitleChange = (e) => {
+      setTitle(e.target.value);
+
+  };
+
+  const handlePlaceChange = (e) => {
+    setPlace(e.target.value);
+  };
+
+  const handleArticleChange = (e) => {
+      setArticle(e.target.value);
+
+  };
 
     return (
         <div className="form-new-blog">
-            
-            <form onSubmit={newBlog} >
+            {showMessage ? (
+        <div className="blog_card">
+          <h2>Your blog has been posted!</h2>
+          <p>Title: {title}</p>
+          <p>Place: {place}</p>
+          <p>Country: {country}</p>
+          <p>Article: {article}</p>
+          {imageURL && <img src={imageURL} alt="Blog post" />}
+        </div>
+      ) : (
+            <form className="blog_form" onSubmit={newBlog} >
             <img  src={bloggy} alt="bloggy character" className="bloggy"/>
             <h1> Create a Blog </h1> 
 
        <div>
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title">Title<span className="required">*</span>:</label>
         <input type="text"
          id="title"
           placeholder={'Give a title for the blog'} 
-          value={title} onChange={(e) => setTitle(e.target.value)} />
+          value={title}
+          onChange={handleTitleChange}
+          />
       </div>
 
       <div>
-        <label htmlFor="image">Image URL:</label>
+        <label htmlFor="image">Image URL<span className="required">*</span>:</label>
         <input type="file" 
-        id="image" 
         onChange={(e) => setImage(e.target.files)} />
       </div>
 
@@ -89,6 +113,8 @@ function CreateBlog () {
         placeholder={'Describe the highlights of your trip'}
          onChange={(e) => setDescription(e.target.value)} />
       </div>
+      <br />
+<br />
 
       <div>
         <label htmlFor="place">Place:</label>
@@ -96,11 +122,11 @@ function CreateBlog () {
          id="place"
           value={place}
           placeholder="Where did you go?" 
-        onChange={(e) => setPlace(e.target.value)} />
+          onChange={handlePlaceChange} />
       </div>
 
       <div>
-      <label htmlFor="country">Country:</label>
+      <label htmlFor="country">Country<span className="required">*</span>:</label>
       <CountryDropdown
         id="country"
         value={country}
@@ -109,27 +135,21 @@ function CreateBlog () {
       />
       </div>
 
+<br />
+<br />
 
-
-      <div>
-        <label htmlFor="article">Article:</label>
+      <div className='article'>
+        <label htmlFor="article">Article<span className="required">*</span>:</label>
         <textarea id="article"
          value={article}
           placeholder={'blog about it'} 
-          onChange={(e) => setArticle(e.target.value)} />
+          onChange={handleArticleChange} />
       </div>
 
-      <div>
-        <label htmlFor="author">Author:</label>
-        <input type="text"
-         id="author"
-          value={author}
-           placeholder={'Name of Adventurer'} 
-           onChange={(e) => setAuthor(e.target.value)} />
-      </div>
       <button type="submit">Submit</button>
 
         </form>
+        )}
             <img  src={logo} alt="Logo" className="logo"/>
         </div>
         

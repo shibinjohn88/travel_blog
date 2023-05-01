@@ -1,4 +1,51 @@
-.abouth1{
-    font-size: 200px;
-    color: red;
-}
+.about-me-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+   top: 15%;
+    background-color: aliceblue;
+ 
+  }
+  .about{
+    background-image: url(../../images/beach.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .about-me-card img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .about-me-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .about-me-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .about-me-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .about-me-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .about-me-card li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  

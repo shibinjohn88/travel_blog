@@ -13,7 +13,7 @@ function Login() {
 
   async function sendForm(e) {
     e.preventDefault()
-    const response = await fetch(`http://localhost:3001/api/auth/`, {
+    const response = await fetch(`/api/auth/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -25,6 +25,7 @@ function Login() {
 
     if (response.status === 200) {
       setCurrentUser(data.user)
+      localStorage.setItem('token', data.token)
     }
     else {
       setError(data.error)

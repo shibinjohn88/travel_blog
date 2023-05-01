@@ -2,10 +2,9 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top:-15px;
-    background-image:url("../../images/sunset.jpeg");
-    background-repeat: no-repeat;
-    background-size:100% 150%;
+    height: 120px;
+    margin-top:55px;
+    background-color: #000000a2;
 }
   
   .footer_list{
@@ -17,27 +16,28 @@
   .footer__github {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 20rem;
    
   }
 
-  .footer h3{
+h6{
     color:white;
   }
   
   .footer__github a {
-    background: white;
-    color: #00916E;
+    background: rgba(255, 255, 255, 0);
+    color: #ffee07;
     padding: 0.8rem;
     border-radius: 0.7rem;
     border: 1px solid transparent;
-    box-shadow: 2px 2px 5px #EE6123;
-  
+    box-shadow: 2px 2px 15px #ffee07;
+    margin-top: 20px;
+    font-size: larger;
   }
   
   .footer__github a:hover {
     background: #ffffff;
     color: #ee6123;
-    box-shadow: 2px 2px 5px #000000;
+    box-shadow: 2px 2px 15px #000000;
   }
 
