@@ -23,7 +23,8 @@ function Show() {
     if (!blog) {
       return <div>Loading...</div>;
     }
-  
+
+
 
     return (
       <div className='show_body'>
