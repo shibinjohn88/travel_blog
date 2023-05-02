@@ -1,4 +1,5 @@
 import React , { useState, useEffect } from 'react';
+import {Link } from 'react-router-dom';
 import './home.css'
 import banner from '../../images/travelogobanner.mp4';
 import { Button, Card } from 'react-bootstrap';
@@ -46,7 +47,9 @@ function Home() {
               <Card.Title>{Blog.blog_place}</Card.Title>
               <Card.Title>{Blog.blog_country}</Card.Title>
               <Card.Text>{Blog.blog_highlights}</Card.Text>
+              <Link to="../show_blog">
               <Button className='card_button'>Blog</Button>
+              </Link>
             </Card.Body>
           </Card>
 
