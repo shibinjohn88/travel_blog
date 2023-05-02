@@ -11,7 +11,7 @@ function CurrentUserProvider({ children }){
     //get logged in user from backend and set as current user
     useEffect( () => {
         async function getLoggedUser() {
-            let resposnse = await fetch ('http://localhost:3001/api/auth', {
+            let resposnse = await fetch ('/api/auth', {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
