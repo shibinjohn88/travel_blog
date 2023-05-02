@@ -1,0 +1,38 @@
+.show_body{
+
+height: 100vh;
+display: 'flex';
+justify-content: 'center';
+align-items: 'center';
+height: '100vh'; 
+}
+
+.show_card {
+    width: 500px;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 500px;
+    margin-left: 300px;
+  }
+ 
+  
+  .show_card img {
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .show_card body {
+    padding: 20px;
+  }
+  
+  .show_card .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .show_card .card-text {
+    font-size: 1rem;
+  }

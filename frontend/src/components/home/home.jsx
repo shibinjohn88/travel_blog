@@ -1,4 +1,5 @@
 import React , { useState, useEffect } from 'react';
+import {Link } from 'react-router-dom';
 import './home.css'
 import banner from '../../images/travelogobanner.mp4';
 import { Button, Card } from 'react-bootstrap';
@@ -39,14 +40,17 @@ function Home() {
    <div className='travel_cards'>
    
    {topBlogs.map((Blog) => (
-          <Card className='card' key={Blog.id}>
+          <Card className='card' key={Blog._id}>
             <Card.Img variant="top" src={Blog.blog_poster} />
             <Card.Body>
               <Card.Title>{Blog.blog_title}</Card.Title>
               <Card.Title>{Blog.blog_place}</Card.Title>
               <Card.Title>{Blog.blog_country}</Card.Title>
               <Card.Text>{Blog.blog_highlights}</Card.Text>
-              <Button className='card_button'>Blog</Button>
+              <button id={Blog._id} onClick={async (e) => {
+                    const id = e.target.id
+                    window.location.replace(`/show_blog/ ${Blog._id}`)
+                }}>Blog</button>
             </Card.Body>
           </Card>
 

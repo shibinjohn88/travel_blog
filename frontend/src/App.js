@@ -4,6 +4,7 @@ import Home from './components/home/home';
 import About from './components/about/about';
 import Login from './components/login/login';
 import Signup from './components/login/signup';
+import Show from './components/show_blog/show';
 import Destination from './components/destination/destination';
 import CreateBlog from './components/create_blog/createblog';
 import BlogList from './components/create_blog/bloglist';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/destination" element={<Destination/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/createblog" element={<CreateBlog/>} />
+            <Route path="/show_blog/:id" element={<Show/>} />
             <Route path="/bloglist" element={<BlogList/>} />
           </Routes>
         </Router>
