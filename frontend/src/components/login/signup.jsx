@@ -6,6 +6,7 @@ function Signup() {
 
   const { setCurrentUser } = useContext(CurrentUser)
   const [credentials, setCredentials ] = useState({
+    username: '',
     email: '',
     password: ''
   })  
@@ -13,23 +14,19 @@ function Signup() {
 
   async function sendForm(e) {
     e.preventDefault()
-    const response = await fetch(`http://localhost:3001/api/auth/`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-    })
-
-    const data = await response.json()
-
-    if (response.status === 200) {
-      setCurrentUser(data.user)
-    }
-    else {
-      setError(data.error)
-    }
+    const response = await fetch(`/api/users/`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
+  })
+   console.log(response)   
   }
+
+    
+
+    
 
   return (
     <div className="signup-form-container">
@@ -96,6 +93,6 @@ function Signup() {
       </form>
     </div>
   );
-}
+      }
 
 export default Signup;
