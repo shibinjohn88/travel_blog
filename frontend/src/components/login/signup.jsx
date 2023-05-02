@@ -21,12 +21,9 @@ function Signup() {
       },
       body: JSON.stringify(credentials)
   })
-   console.log(response)   
+  //  console.log(response)   
   }
 
-    
-
-    
 
   return (
     <div className="signup-form-container">
