@@ -24,7 +24,7 @@ function App() {
             <Route path="/destination" element={<Destination/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/createblog" element={<CreateBlog/>} />
-            <Route path="/show_blog" element={<Show/>} />
+            <Route path="/show_blog/:id" element={<Show/>} />
             <Route path="/bloglist" element={<BlogList/>} />
           </Routes>
         </Router>
