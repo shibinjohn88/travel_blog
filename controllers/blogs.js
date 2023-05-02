@@ -29,10 +29,23 @@ blogs.get('/:id', async (req, res) => {
         res.status(200).json(result)
     }
     catch (error) {
-        console.log("there is an error")
+        //console.log("there is an error")
         res.json(error)
     }
     
+})
+
+//read specific blog using destination
+blogs.get('/destination/:place', async (req, res) => {
+    try {
+        const result = await Blog.find({blog_place: req.params.place})
+        // console.log(author)
+        res.status(200).json(result)
+    }
+    catch (error) {
+        //console.log("there is an error")
+        res.json(error)
+    }
 })
 
 //write blog to database
@@ -60,6 +73,36 @@ blogs.post('/', posters.single('file'), (req, res) => {
                     res.json(error)
                 })
         }
+})
+
+//delete a blog 
+blogs.delete ('/:id', async (req, res) => {
+
+    const [authenticationMethod, token] = req.headers.authorization.split(' ')
+
+        if (authenticationMethod === 'Bearer') {
+            const result = jwt.decode(process.env.JWT_SECRET, token)
+            const {signedUser_id} = result.value
+            const data = await Blog.findById(req.params.id).populate('blog_author')
+            const id = data.blog_author._id
+            //check signed user is the author of the blog
+            if (signedUser_id === id) {
+                console.log("signed user is the author")
+                res.status(200).json('author')
+            }
+            else {
+                res.status(400).json('Only author of the blog can delete the post')
+            }
+        }
+    
+    
+    // Blog.findByIdAndDelete (req.params.id)
+    //     .then (data => {
+    //         res.status (200).json ('Delete Successful')
+    //     })
+    //     .catch (err => {
+    //         res.json (err)
+    //     })
 })
 
 module.exports = blogs
