@@ -10,7 +10,7 @@ function SearchBar() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('/api/blog');
+      const response = await fetch('/api/blogs');
       const data = await response.json();
       setBlogs(data);
     };
@@ -19,9 +19,10 @@ function SearchBar() {
   }, []);
   
     const handleSearch = async () => {
-      const response = await fetch(`/api/blogs?search=${searchTerm}`);
+      const response = await fetch(`/api/blogs/destination/${searchTerm}`);
       const data = await response.json();
       setBlogs(data);
+      console.log(blogs)
     };
 
 
