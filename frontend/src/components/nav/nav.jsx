@@ -9,7 +9,7 @@ function Navbar () {
     
     const { currentUser } = useContext(CurrentUser)
     let signedUser = (
-        <h3>No login</h3>
+        <h3>Login</h3>
     )
     if (currentUser) {
         signedUser = (
@@ -25,8 +25,8 @@ function Navbar () {
       <h3><a href='./destination'>Destinations</a></h3>
       <h3><a href='./bloglist'>Blog</a></h3>
       <h3><a href='./about'>About</a></h3>
-      <h3><a href='./login'>Log In</a></h3>
-      {signedUser}
+      <h3><a href='./login'>{signedUser}</a></h3>
+      
         </div>
     )
 }
