@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./signup.css";
 import {CurrentUser} from "../../contexts/CurrentUser"
 
 function Signup() {
+  const history = useNavigate();
 
   const { setCurrentUser } = useContext(CurrentUser)
   const [credentials, setCredentials ] = useState({
@@ -21,8 +23,13 @@ function Signup() {
       },
       body: JSON.stringify(credentials)
   })
-  //  console.log(response)   
+  const user = await response.json();
+  setCurrentUser(user);
+  history.push('/'); 
   }
+
+
+
 
 
   return (

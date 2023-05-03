@@ -83,7 +83,7 @@ function CreateBlog () {
           <p>Place: {place}</p>
           <p>Country: {country}</p>
           <p>Article: {article}</p>
-          {imageURL && <img src={imageURL} alt="Blog post" />}
+          {imageURL && <img src={image[0]} alt="Blog post" />}
         </div>
       ) : (
             <form className="blog_form" onSubmit={newBlog} >

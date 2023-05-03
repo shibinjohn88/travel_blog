@@ -1,20 +1,39 @@
 .about-me-card {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
     text-align: center;
-    max-width: 300px;
     margin: 0 auto;
-   top: 15%;
+    padding-top: 150px;
     background-color: aliceblue;
+    background-color: rgba(255, 228, 196, 0.934);
+    z-index: 5;
  
   }
   .about{
     background-image: url(../../images/beach.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 120vh;
   }
+
+  .hansel{
+    background-color: #ffcf00;
+
+  }
+
+  .shibin{
+    background-color:  #2371ee;
+
+  }
+  
+  .yugma{
+    background-color:#EE6123;
+
+
+  } 
   
   .about-me-card img {
     width: 100%;

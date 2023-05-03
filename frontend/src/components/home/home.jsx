@@ -5,7 +5,7 @@ import banner from '../../images/travelogobanner.mp4';
 import { Button, Card } from 'react-bootstrap';
 import {SiYourtraveldottv} from 'react-icons/si'
 import travel_blog from '../../images/Travel_Blog.png';
-import Footer from '../footer/footer';
+
 
 
 
@@ -58,7 +58,7 @@ function Home() {
     </div>
 
    </div>
-   <Footer />
+   
   </div> 
  
   );

@@ -10,6 +10,7 @@ import CreateBlog from './components/create_blog/createblog';
 import BlogList from './components/create_blog/bloglist';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import CurrentUserProvider from './contexts/CurrentUser';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/bloglist" element={<BlogList/>} />
           </Routes>
         </Router>
+        <Footer />
       </CurrentUserProvider>
 
     </div>
