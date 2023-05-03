@@ -1,4 +1,6 @@
+
 import './App.css';
+import {routes,route} from 'reat-router-dom';
 import Navbar from './components/nav/nav';
 import Home from './components/home/home';
 import About from './components/about/about';
