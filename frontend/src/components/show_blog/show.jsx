@@ -18,7 +18,7 @@ function Show() {
         }
       };
       fetchData();
-    }, [id]);
+    }, []);
   
     if (!blog) {
       return <div>Loading...</div>;
@@ -28,13 +28,13 @@ function Show() {
     return (
       <div className='show_body'>
           <Card className='show_card'>
-  <Card.Img variant="top" src={blog.blog_poster} />
+  <Card.Img variant="top" src={`/${blog.blog_poster}`} />
   <Card.Body>
     <Card.Title>{blog.blog_title}</Card.Title>
     <Card.Subtitle>{blog.blog_place}, {blog.blog_country}</Card.Subtitle>
     <Card.Text>{blog.blog_description}</Card.Text>
     <Card.Text>{blog.blog_article}</Card.Text>
-    <Card.Text>Written by: {blog.blog_author}</Card.Text>
+    <Card.Text>Written by: {blog.blog_author.username}</Card.Text>
   </Card.Body>
 </Card>
         </div>

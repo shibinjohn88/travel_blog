@@ -4,6 +4,7 @@ const Blog = require('../models/blogs.js')
 const multer = require('multer')
 const filesystem = require('fs')
 const jwt = require('json-web-token')
+const mongoose = require('mongoose')
 
 //destination to upload files 
 const posters = multer({
@@ -21,15 +22,36 @@ blogs.get('/', (req, res) => {
         })
 })
 
+//read specific blog based on signed user
+blogs.get('/user', (req, res) => {
+    const [authenticationMethod, token] = req.headers.authorization.split(' ')
+
+        if (authenticationMethod === 'Bearer') {
+            const result = jwt.decode(process.env.JWT_SECRET, token)
+            const {id} = result.value
+            Blog.find ({blog_author: id})
+                .then ( data => {
+                    res.status(200).json(data)
+                })
+                .catch ( error => {
+                    res.json(error)
+        })
+        }
+    
+})
+
 //read specific blog based on id
 blogs.get('/:id', async (req, res) => {
+    console.log("received request", req.params.id.replace(" ", ""))
+    blog_id = new mongoose.Types.ObjectId(req.params.id.replace(" ", ""))
+    console.log(blog_id)
     try {
-        const result = await Blog.findById(req.params.id).populate('blog_author')
-        // console.log(author)
+        const result = await Blog.findById(blog_id).populate('blog_author')
+        console.log(result)
         res.status(200).json(result)
     }
     catch (error) {
-        //console.log("there is an error")
+        console.log("there is an error")
         res.json(error)
     }
     

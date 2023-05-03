@@ -4,13 +4,17 @@ import './bloglist.css';
 import {SiYourtraveldottv} from 'react-icons/si';
 import bloggy from '../../images/bloggy.gif';
 
+
 function Bloglist() {
     const [blogs, setBlogs] = useState([]);
-
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch(`/api/blogs/`);
+          const response = await fetch(`/api/blogs/user`, {
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        });
           const data = await response.json();
           setBlogs(data);
         } catch (error) {
@@ -39,7 +43,7 @@ function Bloglist() {
                <Card.Title>{Blog.blog_place}</Card.Title>
                <Card.Title>{Blog.blog_country}</Card.Title>
                <Card.Text>{Blog.blog_highlights}</Card.Text>
-               <Button className='blog_card_button'>Blog</Button>
+               <Button className='blog_card_button'>Delete</Button>
              </Card.Body>
            </Card>
  
