@@ -12,6 +12,7 @@ function Navbar () {
         <h3>Login</h3>
     )
     let logOut = null
+    let blogList = null
     if (currentUser) {
         signedUser = (
             <h3>{currentUser.username}</h3>
@@ -22,6 +23,7 @@ function Navbar () {
                 window.location.reload(false)
                 }}>Log out</button>
         )
+        blogList = (<h3><a href='./bloglist'>Blog</a></h3>)
     }
     return (
       
@@ -30,7 +32,7 @@ function Navbar () {
 
       <h3><a href='/' >Home</a></h3>
       <h3><a href='./destination'>Destinations</a></h3>
-      <h3><a href='./bloglist'>Blog</a></h3>
+      {blogList}
       <h3><a href='./about'>About</a></h3>
       <h3><a href='./login'>{signedUser}</a></h3>
       <h3>{logOut}</h3>
