@@ -43,7 +43,23 @@ function Bloglist() {
                <Card.Title>{Blog.blog_place}</Card.Title>
                <Card.Title>{Blog.blog_country}</Card.Title>
                <Card.Text>{Blog.blog_highlights}</Card.Text>
-               <Button className='blog_card_button'>Delete</Button>
+               <Button className='blog_card_button'>Edit</Button>
+               <Button className='blog_card_button' onClick={async (event) => {
+                                const id = event.target.id
+                                try {     
+                                    const response = await fetch(`api/blogs/${Blog._id}`, {
+                                    method: 'delete',
+                                    headers: {
+                                      'Authorization': `Bearer ${localStorage.getItem('token')}`
+                                  }
+                                }
+
+                                    )
+                                    window.location.reload(false)
+                                } catch(err) {
+                                    console.error(`Error: ${err}`)
+                                }
+                            }}>Delete</Button>
              </Card.Body>
            </Card>
  
