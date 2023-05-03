@@ -42,7 +42,7 @@ blogs.get('/user', (req, res) => {
 
 //read specific blog based on id
 blogs.get('/:id', async (req, res) => {
-    console.log("received request", req.params.id.replace(" ", ""))
+    // console.log("received request", req.params.id.replace(" ", ""))
     blog_id = new mongoose.Types.ObjectId(req.params.id.replace(" ", ""))
     console.log(blog_id)
     try {
