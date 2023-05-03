@@ -22,6 +22,24 @@ blogs.get('/', (req, res) => {
         })
 })
 
+//read specific blog based on signed user
+blogs.get('/user', (req, res) => {
+    const [authenticationMethod, token] = req.headers.authorization.split(' ')
+
+        if (authenticationMethod === 'Bearer') {
+            const result = jwt.decode(process.env.JWT_SECRET, token)
+            const {id} = result.value
+            Blog.find ({blog_author: id})
+                .then ( data => {
+                    res.status(200).json(data)
+                })
+                .catch ( error => {
+                    res.json(error)
+        })
+        }
+    
+})
+
 //read specific blog based on id
 blogs.get('/:id', async (req, res) => {
     console.log("received request", req.params.id.replace(" ", ""))
