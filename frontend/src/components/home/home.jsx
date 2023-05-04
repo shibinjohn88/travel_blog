@@ -1,10 +1,12 @@
 import React , { useState, useEffect } from 'react';
-import {Link } from 'react-router-dom';
 import './home.css'
 import banner from '../../images/travelogobanner.mp4';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import {SiYourtraveldottv} from 'react-icons/si'
 import travel_blog from '../../images/Travel_Blog.png';
+import plane2 from '../../images/plane2.gif';
+
+
 
 
 
@@ -37,17 +39,18 @@ function Home() {
 <img  src={travel_blog} alt="travel_blog" className="travel_blog_header"/>
  <div className='top_cards'>
 <h1>Top Places to Visit <SiYourtraveldottv /></h1>
+<br />
+<img src={plane2} className="plane2" alt="plane flying" />
    <div className='travel_cards'>
    
    {topBlogs.map((Blog) => (
           <Card className='card' key={Blog._id}>
             <Card.Img variant="top" src={Blog.blog_poster} />
             <Card.Body>
-              <Card.Title>{Blog.blog_title}</Card.Title>
-              <Card.Title>{Blog.blog_place}</Card.Title>
-              <Card.Title>{Blog.blog_country}</Card.Title>
-              <Card.Text>{Blog.blog_highlights}</Card.Text>
-              <button id={Blog._id} onClick={async (e) => {
+      
+              <Card.Title className='blog_place'> {Blog.blog_place} <hr /> {Blog.blog_title}</Card.Title>
+           
+              <button className='like_button' id={Blog._id} onClick={async (e) => {
                     const id = e.target.id
                     window.location.replace(`/show_blog/ ${Blog._id}`)
                 }}>Blog</button>

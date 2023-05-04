@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Form, FormControl, Button } from 'react-bootstrap';
 import './destination.css';
-import searchBanner from '../../images/Travelog.jpg';
+
 import plane from '../../images/plane.gif';
 
 function SearchBar() {
@@ -28,14 +28,14 @@ function SearchBar() {
 
   return (
     <div className='destination_container'>
-    <img  src={searchBanner} alt="travel_blog" className="travel_blogger"/>
+    <h1>SEARCH A BLOG</h1>
     <img src={plane} className="plane" alt="plane flying" />
     <div className="search_container">
     
     <Form className='search_bar'>
           <FormControl
             type="text"
-            placeholder="Search"
+            placeholder="ENTER A COUNTRY"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -45,16 +45,18 @@ function SearchBar() {
     </div>
     <div className='destination_cards'>
         {blogs.map((blog) => (
-          <Card className='card' key={blog.id}>
-            <Card.Img variant="top" src={blog.blog_poster} />
-            <Card.Body>
-              <Card.Title>{blog.blog_title}</Card.Title>
-              <Card.Title>{blog.blog_place}</Card.Title>
-              <Card.Title>{blog.blog_country}</Card.Title>
-              <Card.Text>{blog.blog_highlights}</Card.Text>
-              <Button className='card_button'>Blog</Button>
-            </Card.Body>
-          </Card>
+   <Card className='destination_card' key={blog._id}>
+   <Card.Img variant="top" src={blog.blog_poster} />
+   <Card.Body>
+
+     <Card.Title className='blog_place'> {blog.blog_place} <hr /> {blog.blog_title}</Card.Title>
+  
+     <button className='like_button' id={blog._id} onClick={async (e) => {
+           const id = e.target.id
+           window.location.replace(`/show_blog/ ${blog._id}`)
+       }}>Blog</button>
+   </Card.Body>
+ </Card>
         ))} 
       </div>
     </div>

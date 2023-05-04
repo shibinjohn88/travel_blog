@@ -21,10 +21,13 @@
     text-decoration: none;
     text-shadow: 1px 2px 5px grey;
     font-family: 'Indie Flower', cursive;
+    transition: color 1s ease;
    }
 
   h3 a:hover {
     color: #2371ee;
+    text-decoration: underline;
+    font-size: 25px;
    }
 
    .logo {
