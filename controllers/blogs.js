@@ -40,6 +40,19 @@ blogs.get('/user', (req, res) => {
     
 })
 
+
+
+//read specific blog using destination
+blogs.get('/destination/:place', async (req, res) => {
+    try {
+        const result = await Blog.find({blog_place: req.params.place})
+        res.status(200).json(result)
+    }
+    catch (error) {
+        res.json(error)
+    }
+})
+
 //read specific blog based on id
 blogs.get('/:id', async (req, res) => {
     blog_id = new mongoose.Types.ObjectId(req.params.id.replace(" ", ""))
@@ -51,17 +64,6 @@ blogs.get('/:id', async (req, res) => {
         res.json(error)
     }
     
-})
-
-//read specific blog using destination
-blogs.get('/destination/:place', async (req, res) => {
-    try {
-        const result = await Blog.find({blog_place: req.params.place})
-        res.status(200).json(result)
-    }
-    catch (error) {
-        res.json(error)
-    }
 })
 
 //write blog to database
