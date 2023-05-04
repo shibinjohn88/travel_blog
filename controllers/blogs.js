@@ -42,16 +42,12 @@ blogs.get('/user', (req, res) => {
 
 //read specific blog based on id
 blogs.get('/:id', async (req, res) => {
-    // console.log("received request", req.params.id.replace(" ", ""))
     blog_id = new mongoose.Types.ObjectId(req.params.id.replace(" ", ""))
-    console.log(blog_id)
     try {
         const result = await Blog.findById(blog_id).populate('blog_author')
-        console.log(result)
         res.status(200).json(result)
     }
     catch (error) {
-        console.log("there is an error")
         res.json(error)
     }
     
@@ -61,11 +57,9 @@ blogs.get('/:id', async (req, res) => {
 blogs.get('/destination/:place', async (req, res) => {
     try {
         const result = await Blog.find({blog_place: req.params.place})
-        // console.log(author)
         res.status(200).json(result)
     }
     catch (error) {
-        //console.log("there is an error")
         res.json(error)
     }
 })
@@ -108,7 +102,6 @@ blogs.delete ('/:id', async (req, res) => {
             const data = await Blog.findById(req.params.id).populate('blog_author')
             const author_id = data.blog_author._id
             //check signed user is the author of the blog
-            console.log(id, author_id)
             if (id == author_id) {
                 Blog.findByIdAndDelete (req.params.id)
                     .then (data => {
@@ -123,5 +116,34 @@ blogs.delete ('/:id', async (req, res) => {
             }
         }
 })
+
+
+
+//edit a blog
+blogs.put ('/:id', async (req, res) => {
+
+    const [authenticationMethod, token] = req.headers.authorization.split(' ')
+
+        if (authenticationMethod === 'Bearer') {
+            const result = jwt.decode(process.env.JWT_SECRET, token)
+            const {id} = result.value
+            const data = await Blog.findById(req.params.id).populate('blog_author')
+            const author_id = data.blog_author._id
+            //check signed user is the author of the blog
+            if (id == author_id) {
+                Blog.findByIdAndUpdate (req.params.id, req.body, {new: true})
+                    .then (data => {
+                        res.status (200).json ("success")
+                    })
+                    .catch (err => {
+                        res.json (err)
+                    })
+            }
+            else {
+                res.status(400).json('Only author of the blog can edit the post')
+            }
+        }
+})
+
 
 module.exports = blogs

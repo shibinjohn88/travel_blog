@@ -27,7 +27,7 @@ function Login() {
       setCurrentUser(data.user)
       console.log(data.token)
       localStorage.setItem('token', data.token)
-     
+      window.location.replace('/')
     }
     else {
       setError(data.error)
