@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import "./signup.css";
 import {CurrentUser} from "../../contexts/CurrentUser"
 
 function Signup() {
-  const history = useNavigate();
+  
 
   const { setCurrentUser } = useContext(CurrentUser)
   const [credentials, setCredentials ] = useState({
@@ -25,7 +24,7 @@ function Signup() {
   })
   const user = await response.json();
   setCurrentUser(user);
-  history.push('/'); 
+  window.location.replace('/login') 
   }
 
 
@@ -77,15 +76,6 @@ function Signup() {
           </div>
           <br />
           <div>
-<label htmlFor="password">Confirm Password:</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            required
-            value={credentials.password}
-            onChange={e => setCredentials({ ...credentials, password: e.target.value })}
-          />
         </div>
         <br />
         <button type="submit">Create Account</button>
