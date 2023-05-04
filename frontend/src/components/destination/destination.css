@@ -4,6 +4,25 @@
 background-image: url("../../images/search_background.jpeg");
 background-repeat: no-repeat;
 background-size: cover;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.destination_cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: -900px;
+  width: 100%;
+  padding: 50px;
+}
+
+.destination_card{
+  background-color: antiquewhite;
+  padding: 5px;
+  margin-top: 30px;
 }
  
  .travel_blogger{
@@ -18,9 +37,9 @@ background-size: cover;
   .search_container {
     display: flex;
     align-items: flex-start;
-    max-width: 80vw;
+    width: 100%;
     height: 100vh;
-    margin: 0 auto
+    margin: 0 0;
   }
   
   
