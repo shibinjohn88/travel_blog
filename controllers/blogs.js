@@ -67,6 +67,8 @@ blogs.get('/:id', async (req, res) => {
 })
 
 //write blog to database
+//file upload adobted from https://www.youtube.com/watch?v=xKs2IZZya7c
+
 blogs.post('/', posters.single('file'), (req, res) => {
     
     

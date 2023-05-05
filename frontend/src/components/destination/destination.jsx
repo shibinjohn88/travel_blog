@@ -22,7 +22,6 @@ function SearchBar() {
       const response = await fetch(`/api/blogs/destination/${searchTerm}`);
       const data = await response.json();
       setBlogs(data);
-      console.log(blogs)
     };
 
 
@@ -35,7 +34,7 @@ function SearchBar() {
     <Form className='search_bar'>
           <FormControl
             type="text"
-            placeholder="ENTER A COUNTRY"
+            placeholder="ENTER A PLACE"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

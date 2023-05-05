@@ -20,7 +20,7 @@ function Navbar () {
         logOut = (
             <button onClick={() => {
                 localStorage.removeItem('token')
-                window.location.reload(false)
+                window.location.replace('/')
                 }}>Log out</button>
         )
         blogList = (<h3><a href='/bloglist'>Blog</a></h3>)
