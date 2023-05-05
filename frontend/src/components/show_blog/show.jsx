@@ -19,7 +19,6 @@ function Show() {
         try {
           const response = await fetch(`/api/blogs/${id}`);
           const data = await response.json();
-          console.log(data);
           setBlog(data);
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -50,7 +49,7 @@ function Show() {
     
     <Card.Subtitle className='blog_place'>{blog.blog_place}, {blog.blog_country}</Card.Subtitle>
     <Card.Text className='blog_description'>{blog.blog_description}</Card.Text>
-    <Card.Text className='blog_article'>Blog: <br /> <hr />{blog.blog_article} <br/> 
+    <Card.Text className='blog_article'>Blog: <br />{blog.blog_article} <br/> 
      <button className='like_button' onClick={handleLike}><span>{count} <FaThumbsUp/> </span></button>
      
       </Card.Text>

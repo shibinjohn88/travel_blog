@@ -8,7 +8,7 @@ import yugma from '../../images/sunset.jpeg';
 function HelloWorld() {
   return (
     <div className="about">
-    <div class="about-me-card">
+    <div className="about-me-card">
 
  <div className='hansel'>
       <img src={hansel} alt="Profile Picture" />
@@ -29,9 +29,9 @@ function HelloWorld() {
   <div className='shibin'>
       <img src={shibin} alt="Profile Picture" />
       <h2>Shibin John</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam scelerisque enim liber</p>
+      <p>Im a full stack developer. I love coding.</p>
       <h3>My role in this project:</h3>
-      <p>Back-End</p>
+      <p>Back-End, Project Leader, Deployment</p>
       <h3>Places I have visited:</h3>
       <ul>
         <li>Paris, France</li>

@@ -36,14 +36,13 @@ function Bloglist() {
           <div className='blog_cards'>
    
     {blogs.map((Blog) => (
-           <Card className='blog_card' key={Blog.id}>
+           <Card className='blog_card' key={Blog._id}>
              <Card.Img variant="top" src={Blog.blog_poster} />
              <Card.Body>
                <Card.Title>{Blog.blog_title}</Card.Title>
                <Card.Title>{Blog.blog_place}</Card.Title>
                <Card.Title>{Blog.blog_country}</Card.Title>
                <Card.Text>{Blog.blog_highlights}</Card.Text>
-               <Button className='blog_card_button'>Edit</Button>
                <Button className='blog_card_button' onClick={async (event) => {
                                 const id = event.target.id
                                 try {     
